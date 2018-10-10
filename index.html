@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Zenroom test</title>
+  </head>
+  <body>
+    <button type="button" id="run">
+      <span class="align-middle">Run Zenroom</span>
+    </button>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script async type="text/javascript" src="index.js"></script>
+
+    <script>
+        var Module = {
+            print: text => console.log(text),
+            exec_ok: () => 0,
+            exec_error: () => 0,
+        }
+
+        const zenroom = function() {
+            const keys = null
+            const data = null
+            const conf = null
+            const script = "print('Hello world!')"
+
+            Module.ccall('zenroom_exec', 'number',
+              ['string', 'string', 'string', 'string', 'number'],
+              [script, conf, keys, data, 1]);
+        }
+
+        $('#run').click(() => {
+          zenroom()
+        })
+    </script>
+  </body>
+</html>
