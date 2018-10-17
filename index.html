@@ -21,10 +21,10 @@
         }
 
         const zenroom = function() {
-            const keys = null
-            const data = null
+            const keys = null; // keypair.keys
+            const data = null; // if script=decrypt then attributes.data
             const conf = null
-            const script = "print('Hello world!')"
+            const script = "print('Hello world!')"; // encrypt_message.lua / decrypt_message.lua  
 
             Module.ccall('zenroom_exec', 'number',
               ['string', 'string', 'string', 'string', 'number'],
